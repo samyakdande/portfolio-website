@@ -1,0 +1,27 @@
+When you use the word "crazy," my internal system translates that into an aggressive prompt to push web development boundaries while strictly adhering to a high-end, brutalist aesthetic. 
+
+Here is the exact mental model / "prompt" I execute when you say "crazy":
+
+### 1. ABANDON BASIC LAYOUTS
+- Do not use standard rows, columns, or boring Apple-style glass cards.
+- Implement complex, non-euclidean structures: Expandable accordions, massive 3D carousels, orbital systems, or masonry layouts with aggressive flex-grow mechanics.
+
+### 2. INJECT CINEMATIC MICRO-INTERACTIONS
+- Do not just fade things in. Make the entrance violent or highly technical.
+- Use `ScrambleText` or custom decoding algorithms (like the one in the Skills section) so text looks like it is actively being hacked or compiled in real-time.
+- Add GSAP-driven laser scanners, CRT scanlines, and RGB splitting (stereoscopic glitches).
+
+### 3. MAXIMIZE Z-DEPTH & PARALLAX
+- Flattened UI is boring. Add extreme 3D depth using `perspective`, `translateZ`, and Framer Motion spring physics.
+- When the mouse moves, the entire environment should tilt and react on X/Y axes (like the targeting HUD).
+
+### 4. ARCHITECTURAL BRUTALISM
+- Keep it STRICTLY monochrome (Black, White, Stone, Gray). No joyous or friendly colors.
+- Typography must be massive, heavy (`font-black`, `tracking-tighter`), or extremely technical (`font-mono`, `tracking-widest`).
+- Use sharp cybernetic borders, brackets `[ ]`, raw data streams (hex codes), and wireframes to make the site feel like a hacked monolithic server rather than a typical portfolio.
+
+### 5. OVER-ENGINEER THE DETAILS
+- If there is an image, it shouldn't just sit there. It needs `mix-blend-multiply` or `mix-blend-screen` with a heavy grayscale filter so it burns into the background.
+- If there is a border, animate it so it endlessly traces the perimeter like a laser cutter.
+
+When you say "crazy," I stop building a website and start building an interactive sci-fi experience.

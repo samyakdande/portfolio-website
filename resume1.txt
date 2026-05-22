@@ -1,0 +1,61 @@
+SAMYAK PRASHANT DANDE
+dande.samyak1510@gmail.com | +91 7498643372 | Pune, Maharashtra
+linkedin.com/in/samyak-dande | github.com/samyakdande
+Profile
+Machine Learning enthusiast with hands-on experience in building intelligent systems using ML, RAG, and Agentic AI
+architectures. Developed end-to-end systems integrating data preprocessing, retrieval pipelines, and deployment for real
+world applications.
+Experience
+Agilos.in
+AI Intern
+01/2026– 03/2026
+• Built a stateful RAG pipeline using LangChain + LangGraph enabling multi-turn contextual reasoning.
+• Improved response accuracy and reduced hallucinations by 30% via optimized retrieval and prompt engineering.
+• Applied NLP techniques for better text analytics and insights.
+• Developed multilingual AI support (Sarvam AI) to improve accessibility.
+Intel Unnati
+Multilingual NCERT Doubt Solver
+• Built a multilingual AI-based doubt solving system using RAG to answer NCERT-based academic queries.
+• Implemented semantic search over structured educational content using vector embeddings (FAISS/Pinecone).
+• Enabled cross-lingual query understanding and response generation for improved accessibility.
+• Designed prompt pipelines for contextual answer generation with reduced hallucination.
+• Improved student interaction experience through structured responses and knowledge grounding.
+Projects
+LangGraph-MultiState-Agent
+• Designed a multi-agent workflow using LangGraph for stateful reasoning across multiple steps.
+• Implemented memory-based decision flow and tool-calling for dynamic task execution.
+• Improved reasoning consistency and contextual continuity in multi-step queries.
+Tender-Voice-AI (RAG for Tenders)
+• Built a RAG-based system to analyze government tenders using semantic document retrieval.
+• Integrated speech-to-text and text-to-speech for voice-based interaction.
+• Extracted key insights such as eligibility, deadlines, and summaries using vector databases.
+AI for Breast Cancer Prediction
+• Developed ML models (SVM, Random Forest) for diagnosis prediction.
+• Improved model performance through feature engineering and hyperparameter tuning.
+09/2025– 01/2026
+Skills
+Programming: Python, C++, JavaScript
+AI/ML: Machine Learning, NLP, RAG, Generative AI, LangChain, LangGraph
+Frameworks: FastAPI, Flask, Streamlit, Docker
+Databases: MySQL, MongoDB, SQLite, FAISS, Pinecone, ChromaDB
+Libraries: Pandas, NumPy, Matplotlib, Seaborn
+Tools: Git, Power BI, n8n, OpenClaw
+Education
+B.E. Computer Engineering
+Nutan Maharashtra Institute of Engineering & Technology, Pune
+GPA: 9.08/10
+12th HSC
+10th SSC
+2027
+68.2%
+88.2%
+1
+Achievements
+• Finalist (Top 5), ACE National Hackathon (NMIMS)
+• Completed Intel Unnati Training (OPEA-based RAG)
+• Winner, University Debate Competition
+• Runner-up, Marketing Campaign Challenge
+Certifications
+• Ultimate RAG Bootcamp (LangChain, LangGraph, LangSmith)
+• Data Science & ML Bootcamp (Udemy)
+2
