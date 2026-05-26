@@ -5,6 +5,8 @@ import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
+const MotionSpan = motion.span as any;
+
 interface TextRevealByWordProps {
   text: string;
   className?: string;
@@ -58,12 +60,12 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
   return (
     <span className="relative mx-1.5 lg:mx-3 xl:mx-4 my-1 lg:my-2">
       <span className="absolute opacity-10 text-black">{children}</span>
-      <motion.span
+      <MotionSpan
         style={{ opacity }}
         className="text-black drop-shadow-[0_0_15px_rgba(0,0,0,0.1)]"
       >
         {children}
-      </motion.span>
+      </MotionSpan>
     </span>
   );
 };
