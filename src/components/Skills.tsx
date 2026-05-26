@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+const MotionDiv = motion.div as any;
+
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -343,7 +345,7 @@ const SkillModal = ({ skill, onClose }: { skill: any, onClose: () => void }) => 
   };
 
   return (
-    <motion.div 
+    <MotionDiv 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -354,7 +356,7 @@ const SkillModal = ({ skill, onClose }: { skill: any, onClose: () => void }) => 
     >
       <div className="absolute inset-0 cursor-crosshair" onClick={onClose} />
       
-      <motion.div 
+      <MotionDiv 
         initial={{ scale: 0.95, y: 20, rotateX: 5 }}
         animate={{ scale: 1, y: 0, rotateX: mousePos.y, rotateY: mousePos.x }}
         exit={{ scale: 0.95, y: 20, opacity: 0 }}
@@ -366,7 +368,7 @@ const SkillModal = ({ skill, onClose }: { skill: any, onClose: () => void }) => 
         <div className="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(rgba(255,255,255,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,255,255,0.03),rgba(200,200,200,0.02),rgba(255,255,255,0.03))] bg-[length:100%_4px,3px_100%] z-50" />
         
         {/* Spinning Cybernetic Reticle */}
-        <motion.div 
+        <MotionDiv 
           animate={{ rotate: 360 }} 
           transition={{ duration: 60, ease: "linear", repeat: Infinity }}
           className="absolute -top-[50%] -right-[20%] w-[1000px] h-[1000px] border border-white/5 rounded-full pointer-events-none opacity-30 z-0 flex items-center justify-center"
@@ -374,7 +376,7 @@ const SkillModal = ({ skill, onClose }: { skill: any, onClose: () => void }) => 
           <div className="w-[800px] h-[800px] border border-dashed border-white/10 rounded-full" />
           <div className="absolute w-full h-[1px] bg-white/5" />
           <div className="absolute h-full w-[1px] bg-white/5" />
-        </motion.div>
+        </MotionDiv>
 
         {/* Laser Scanner Line - White */}
         <div ref={scanlineRef} className="absolute left-0 w-full h-[2px] bg-white/50 shadow-[0_0_20px_rgba(255,255,255,0.5)] z-40 pointer-events-none blur-[1px]" />
@@ -399,7 +401,7 @@ const SkillModal = ({ skill, onClose }: { skill: any, onClose: () => void }) => 
         {/* Scrollable Skills Grid with Logos */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10 overflow-y-auto hide-scrollbar pb-6 pr-2 transform-gpu" style={{ transform: "translateZ(40px)" }}>
           {skillsArray.map((s: string, i: number) => (
-            <motion.div 
+            <MotionDiv 
               key={i}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -422,7 +424,7 @@ const SkillModal = ({ skill, onClose }: { skill: any, onClose: () => void }) => 
                 className="w-8 h-8 opacity-40 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
                 onError={(e) => { e.currentTarget.style.display = 'none' }}
               />
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
 
@@ -431,7 +433,7 @@ const SkillModal = ({ skill, onClose }: { skill: any, onClose: () => void }) => 
           <LiveTerminalData />
         </div>
 
-      </motion.div>
-    </motion.div>
+      </MotionDiv>
+    </MotionDiv>
   );
 };
