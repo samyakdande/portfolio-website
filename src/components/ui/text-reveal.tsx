@@ -17,7 +17,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
   const targetRef = useRef<HTMLDivElement | null>(null);
 
   const { scrollYProgress } = useScroll({
-    target: targetRef,
+    target: targetRef as any,
     offset: ["start 40%", "end 90%"], // Completes revealing before unpinning
   });
   
