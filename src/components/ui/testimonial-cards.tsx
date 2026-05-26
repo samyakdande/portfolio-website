@@ -36,10 +36,10 @@ export function TestimonialCard ({ handleShuffle, testimonial, position, id, aut
         right: 0,
         bottom: 0
       }}
-      onDragStart={(e, info) => {
+      onDragStart={(e: any, info: any) => {
         dragRef.current = info.point.x;
       }}
-      onDragEnd={(e, info) => {
+      onDragEnd={(e: any, info: any) => {
         if (Math.abs(info.offset.x) > 100) {
           handleShuffle();
           setIsOpen(false);
