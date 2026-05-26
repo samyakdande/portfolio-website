@@ -23,7 +23,7 @@ export function ChatbotWidget() {
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  
+
   // Refs for GSAP
   const containerRef = useRef<HTMLDivElement>(null);
   const toggleBtnRef = useRef<HTMLButtonElement>(null);
@@ -49,11 +49,11 @@ export function ChatbotWidget() {
   // Open/Close transition
   useEffect(() => {
     if (isOpen && containerRef.current) {
-      gsap.fromTo(containerRef.current, 
+      gsap.fromTo(containerRef.current,
         { opacity: 0, y: 40, scale: 0.98, filter: "blur(10px)" },
         { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.8, ease: "power4.out" }
       );
-      
+
       // Auto-focus input with a slight delay
       setTimeout(() => inputRef.current?.focus(), 400);
     }
@@ -64,7 +64,7 @@ export function ChatbotWidget() {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
-    
+
     if (isOpen && messageListRef.current?.lastElementChild) {
       gsap.fromTo(messageListRef.current.lastElementChild,
         { opacity: 0, y: 20, scale: 0.98 },
@@ -91,7 +91,12 @@ export function ChatbotWidget() {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: [...messages.filter(m => m.id !== "greeting"), userMessage] }),
+        body: JSON.stringify({ 
+          messages: [...messages.filter(m => m.id !== "greeting"), userMessage].map(m => ({
+            role: m.role,
+            content: m.content
+          }))
+        }),
       });
 
       if (!response.ok) throw new Error("API response was not ok");
@@ -156,7 +161,7 @@ export function ChatbotWidget() {
           </div>
 
           {/* Messages Area */}
-          <div 
+          <div
             className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-8 sm:space-y-10 bg-gradient-to-b from-transparent via-white/[0.01] to-black/60 relative scroll-smooth"
             ref={messageListRef}
           >
@@ -172,8 +177,8 @@ export function ChatbotWidget() {
                 <div
                   className={cn(
                     "w-9 h-9 flex items-center justify-center shrink-0 border mt-1",
-                    m.role === "user" 
-                      ? "bg-white text-black border-white rounded-full" 
+                    m.role === "user"
+                      ? "bg-white text-black border-white rounded-full"
                       : "bg-black text-white/80 border-white/10 rounded-xl shadow-[0_0_15px_rgba(255,255,255,0.03)]"
                   )}
                 >
