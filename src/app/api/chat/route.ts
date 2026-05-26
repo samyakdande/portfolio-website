@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     const { messages } = await req.json();
 
     const result = await streamText({
-      model: groq('llama3-70b-8192'),
+      model: groq('llama-3.3-70b-versatile'),
       system: `You are the digital persona of Samyak Dande, the creator of this portfolio. You speak directly as Samyak in the first person ("I", "my").
 You are NOT a generic customer-support bot. You are an intelligent, cinematic, and professional digital engineer responding to visitors.
 
