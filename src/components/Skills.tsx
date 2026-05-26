@@ -223,9 +223,10 @@ const AccordionPanel = ({ skill, index, onClick }: { skill: any, index: number, 
         "absolute top-8 right-8 z-20 flex gap-1 h-8 transition-opacity duration-700 delay-300",
         isActive ? "opacity-50" : "opacity-0"
       )}>
-        {Array.from({length: 12}).map((_, i) => (
-          <div key={i} className="bg-white" style={{ width: `${Math.random() * 4 + 1}px` }} />
-        ))}
+        {Array.from({length: 12}).map((_, i) => {
+          const pseudoRandomWidth = ((i * 7) % 4) + 1.5;
+          return <div key={i} className="bg-white" style={{ width: `${pseudoRandomWidth}px` }} />;
+        })}
       </div>
 
       {/* Kinetic Scrolling Marquee (Background) */}
@@ -381,9 +382,6 @@ const SkillModal = ({ skill, onClose }: { skill: any, onClose: () => void }) => 
         {/* Header */}
         <div className="flex justify-between items-start mb-8 border-b border-white/10 pb-6 relative z-10 shrink-0 transform-gpu" style={{ transform: "translateZ(30px)" }}>
           <div>
-            <p className="text-stone-400 font-mono text-xs md:text-sm uppercase tracking-[0.3em] mb-2 animate-pulse">
-              [ DIRECTORY ACCESS GRANTED ]
-            </p>
             <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase leading-none">
               <DecodeText text={skill.title} delay={0.1} />
             </h2>
