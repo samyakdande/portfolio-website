@@ -13,7 +13,7 @@ function cn(...inputs: ClassValue[]) {
 
 type Message = { id: string; role: "user" | "assistant"; content: string };
 
-const INITIAL_GREETING = "Systems online. Ask me about AI systems, projects, architecture, or how I can help build intelligent experiences.";
+const INITIAL_GREETING = "Hi, I am Samyak. How can I help you today?";
 
 export function ChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);
