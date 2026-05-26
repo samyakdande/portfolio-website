@@ -92,14 +92,17 @@ export function ChatbotWidget() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
-          messages: [...messages.filter(m => m.id !== "greeting"), userMessage].map(m => ({
-            role: m.role,
-            content: m.content
-          }))
+          messages: [{
+            role: userMessage.role,
+            content: userMessage.content
+          }]
         }),
       });
 
-      if (!response.ok) throw new Error("API response was not ok");
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`[Status ${response.status}] ${errorText}`);
+      }
 
       const reader = response.body?.getReader();
       const decoder = new TextDecoder();
@@ -120,8 +123,13 @@ export function ChatbotWidget() {
           });
         }
       }
-    } catch (error) {
-      console.error(error);
+    } catch (error: any) {
+      console.error("Chat Error:", error);
+      setMessages((prev) => [...prev, { 
+        id: (Date.now() + 2).toString(), 
+        role: "assistant", 
+        content: `**Error:** ${error.message}\n\nPlease try again or check the API connection.` 
+      }]);
     } finally {
       setIsLoading(false);
     }
