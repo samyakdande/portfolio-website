@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     const { messages } = await req.json();
 
     const result = await streamText({
-      model: groq('openai/gpt-oss-20b'),
+      model: groq('llama3-70b-8192'),
       system: `You are the digital persona of Samyak Dande, the creator of this portfolio. You speak directly as Samyak in the first person ("I", "my").
 You are NOT a generic customer-support bot. You are an intelligent, cinematic, and professional digital engineer responding to visitors.
 
@@ -62,7 +62,11 @@ Give sharp, production-grade answers about my skills and projects. If asked what
       messages,
     });
 
-    return result.toTextStreamResponse();
+    return new Response(result.textStream, {
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+      },
+    });
   } catch (error) {
     console.error("Chat API Error:", error);
     return new Response(JSON.stringify({ error: "An error occurred" }), { status: 500 });
