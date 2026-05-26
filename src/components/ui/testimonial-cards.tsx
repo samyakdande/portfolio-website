@@ -4,6 +4,8 @@ import * as React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from "@/lib/utils";
 
+const MotionDiv = motion.div as any;
+
 export function TestimonialCard ({ handleShuffle, testimonial, position, id, author, images }: any) {
   const dragRef = React.useRef(0);
   const isFront = position === "front";
@@ -14,7 +16,7 @@ export function TestimonialCard ({ handleShuffle, testimonial, position, id, aut
   const effect = "relative w-full h-full shadow-2xl overflow-hidden rounded-xl border-2 border-slate-700 bg-slate-900";
 
   return (
-    <motion.div
+    <MotionDiv
       style={{
         zIndex: position === "front" ? "3" : position === "middle" ? "2" : position === "back" ? "1" : "0",
         opacity: position === "hidden" ? 0 : 1,
@@ -88,6 +90,6 @@ export function TestimonialCard ({ handleShuffle, testimonial, position, id, aut
           </div>
         </>
       )}
-    </motion.div>
+    </MotionDiv>
   );
 };
