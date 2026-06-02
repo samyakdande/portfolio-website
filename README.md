@@ -1,5 +1,5 @@
-# [ DIRECTORY ACCESS GRANTED ] : SAMYAK DANDE
-
+# SAMYAK DANDE
+well checkout the website at : (https://portfolio-website-final-iota.vercel.app/)
 > **A Brutalist, Motion-Driven Cinematic Portfolio.**
 
 This repository contains the source code for a highly experimental, high-performance web portfolio built to break standard UX paradigms. It eschews basic grid layouts and standard Apple-style glassmorphism in favor of aggressive brutalism, complex micro-interactions, and massive Z-depth parallax.
